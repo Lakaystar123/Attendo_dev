@@ -1,0 +1,115 @@
+.calendar-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2.5rem;
+  overflow: hidden;
+}
+
+.calendar-modal {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  width: 1200px;
+  height: 800px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  isolation: isolate;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.calendar-content {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 3.5rem 2rem 2rem;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #f8fafc, #ffffff);
+}
+
+.calendar-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #ffffff;
+  border: none;
+  font-size: 1.5rem;
+  color: #64748b;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  z-index: 1002;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+}
+
+.calendar-modal-close:hover {
+  background-color: #f1f5f9;
+  color: #334155;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 1280px) {
+  .calendar-modal {
+    width: 95vw;
+    height: 85vh;
+  }
+  
+  .calendar-content {
+    padding: 3rem 1.5rem 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .calendar-modal-overlay {
+    padding: 1.5rem;
+  }
+  
+  .calendar-modal {
+    width: 95vw;
+    height: 90vh;
+  }
+  
+  .calendar-content {
+    padding: 2.5rem 1rem 1rem;
+  }
+  
+  .calendar-modal-close {
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 36px;
+    height: 36px;
+    font-size: 1.25rem;
+  }
+} 
